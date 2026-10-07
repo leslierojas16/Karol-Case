@@ -60,3 +60,95 @@ button:hover {
   background: #e8c978;
   color: #111111;
 }
+
+/* SECCIÓN DE PRODUCTOS */
+
+.hero {
+  margin-bottom: 80px;
+}
+
+.hero h2 {
+  font-size: 34px;
+  margin-bottom: 14px;
+}
+
+.hero p {
+  font-size: 16px;
+  color: #666666;
+  margin-bottom: 28px;
+}
+
+.hero button {
+  background: #111111;
+  color: #ffffff;
+}
+
+.hero button:hover {
+  background: #e8c978;
+  color: #111111;
+}
+
+.favorites {
+  padding-top: 20px;
+}
+
+.favorites h2 {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.favorites > p {
+  color: #777777;
+  margin-bottom: 35px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.product-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px;
+  text-align: left;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.product-image {
+  height: 260px;
+  background: #f1f1ef;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999999;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.product-card h3 {
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+
+.product-card .price {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.product-card button {
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  .products {
+    grid-template-columns: 1fr;
+  }
+
+  .product-image {
+    height: 300px;
+  }
+}
