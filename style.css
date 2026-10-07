@@ -146,6 +146,7 @@ button:hover {
 @media (max-width: 700px) {
   .products {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .product-image {
