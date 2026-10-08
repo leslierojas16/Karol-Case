@@ -178,3 +178,54 @@ button:hover {
   background: #e8c978;
   color: #111111;
 }
+
+/* INFORMACIÓN IMPORTANTE */
+
+.information {
+  background: #ffffff;
+  border: 1px solid #ddd8ce;
+  border-radius: 16px;
+  padding: 35px 28px;
+  margin-top: 70px;
+  text-align: left;
+}
+
+.information h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #111111;
+}
+
+.information-item {
+  padding: 20px 0;
+  border-bottom: 1px solid #e8e3d9;
+}
+
+.information-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.information-item h3 {
+  font-size: 17px;
+  margin-bottom: 8px;
+  color: #111111;
+}
+
+.information-item p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #666666;
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .information {
+    padding: 25px 20px;
+  }
+
+  .information h2 {
+    font-size: 24px;
+  }
+}
