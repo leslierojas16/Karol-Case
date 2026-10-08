@@ -162,3 +162,19 @@ button:hover {
     height: 300px;
   }
 }
+.hero-button {
+  display: inline-block;
+  background: #111111;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-button:hover {
+  background: #e8c978;
+  color: #111111;
+}
