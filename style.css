@@ -230,45 +230,44 @@ button:hover {
   }
 }
 
-/* MENU DE NAVEGACION */
+/* MENU MINIMALISTA KAROL CASE */
 
 .menu {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
-  padding: 18px 20px;
-  background: #ffffff;
-  border-bottom: 1px solid #e8c978;
+  gap: 30px;
+  padding: 24px 20px;
+  background: #111111;
 }
 
 .menu a {
-  display: inline-block;
-  padding: 9px 15px;
-  color: #111111;
-  background: #f5f5f3;
+  color: #ffffff;
   text-decoration: none;
-  border: 1px solid #e5e1d8;
-  border-radius: 6px;
   font-size: 14px;
+  letter-spacing: 0.5px;
+  padding: 8px 0;
+  border-bottom: 1px solid transparent;
   transition: 0.3s;
 }
 
+.menu a:visited {
+  color: #ffffff;
+}
+
 .menu a:hover {
-  background: #e8c978;
-  color: #111111;
-  border-color: #e8c978;
+  color: #e8c978;
+  border-bottom: 1px solid #e8c978;
 }
 
 @media (max-width: 600px) {
   .menu {
-    gap: 8px;
-    padding: 14px 10px;
+    gap: 12px 22px;
+    padding: 20px 12px;
   }
 
   .menu a {
-    padding: 8px 11px;
     font-size: 13px;
   }
 }
