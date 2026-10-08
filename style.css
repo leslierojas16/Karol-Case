@@ -15,18 +15,22 @@ header {
   background: #111111;
   color: #ffffff;
   text-align: center;
-  padding: 45px 20px;
+  padding: 60px 20px 45px;
+  border-bottom: 1px solid #302b20;
 }
 
 header h1 {
-  font-size: 32px;
-  letter-spacing: 4px;
-  margin-bottom: 8px;
+  font-size: 34px;
+  letter-spacing: 6px;
+  font-weight: 500;
+  margin-bottom: 16px;
 }
 
 header p {
   color: #e8c978;
-  font-size: 15px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin-bottom: 0;
 }
 
 main {
