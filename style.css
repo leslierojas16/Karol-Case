@@ -241,17 +241,20 @@ margin-bottom: 18px;
 
 .menu {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  gap: 22px;
+  gap: 18px;
   padding: 14px 4%;
   background: #111111;
   position: relative;
 }
 
 .carrito-en-menu {
-  margin-left: auto;
+  position: absolute;
+  right: 4%;
+  top: 50%;
+  transform: translateY(-50%);
   flex-shrink: 0;
 }
 
