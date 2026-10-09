@@ -30,7 +30,7 @@
   <a href="#contacto">Contacto</a> 
 
     <div class="carrito-en-menu">
-  <a href="#carrito" aria-label="Ver carrito">
+  <button id="cerrar-carrito" type="button" aria-label="Cerrar carrito">✕</button>
     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
          viewBox="0 0 24 24" fill="none" stroke="#e8c978"
          stroke-width="1.2" stroke-linecap="round"
@@ -204,6 +204,25 @@ document.getElementById("pedir-whatsapp").addEventListener("click", () => {
     "https://wa.me/584140802335?text=" + encodeURIComponent(mensaje),
     "_blank"
   );
+});
+  const panelCarrito = document.getElementById("carrito");
+
+document.getElementById("abrir-carrito").addEventListener("click", (e) => {
+  e.preventDefault();
+  panelCarrito.hidden = false;
+  panelCarrito.classList.add("carrito-abierto");
+});
+
+document.getElementById("cerrar-carrito").addEventListener("click", () => {
+  panelCarrito.classList.remove("carrito-abierto");
+  panelCarrito.hidden = true;
+});
+
+panelCarrito.addEventListener("click", (e) => {
+  if (e.target === panelCarrito) {
+    panelCarrito.classList.remove("carrito-abierto");
+    panelCarrito.hidden = true;
+  }
 });
 </script>
 </body>
