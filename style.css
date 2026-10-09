@@ -241,12 +241,18 @@ margin-bottom: 18px;
 
 .menu {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  padding: 24px 20px;
+  flex-wrap: nowrap;
+  gap: 22px;
+  padding: 14px 4%;
   background: #111111;
+  position: relative;
+}
+
+.carrito-en-menu {
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .menu a {
