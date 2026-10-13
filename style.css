@@ -378,7 +378,14 @@ margin-bottom: 18px;
   border: none;
   border-radius: 50%;
   background: #fff;
-  font-size: 22px;
+  color: #171717;
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
 }
 
 .carrito-panel > button:not(#cerrar-carrito) {
