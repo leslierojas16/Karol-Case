@@ -407,3 +407,52 @@ margin-bottom: 18px;
   width: auto;
   margin-left: 8px;
 }
+/* Categorías por modelo de teléfono */
+.modelos {
+  padding: 45px 20px;
+  text-align: center;
+}
+
+.modelos h2 {
+  margin-bottom: 10px;
+  color: #171717;
+}
+
+.modelos > p {
+  color: #777;
+  margin-bottom: 25px;
+}
+
+.modelos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.modelo-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 65px;
+  padding: 12px;
+  border: 1px solid #e8c978;
+  border-radius: 10px;
+  color: #171717;
+  background: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.modelo-card:hover {
+  background: #171717;
+  color: #e8c978;
+}
+
+@media (min-width: 600px) {
+  .modelos-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
