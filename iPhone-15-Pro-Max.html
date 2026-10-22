@@ -46,18 +46,122 @@
         <img src="iPhone-15-Pro-Max/6f8286ae-7885-4ebf-bada-895e5dbb0817.jpeg" alt="Case 1 para iPhone 15 Pro Max">
         <p>Case classic</p>
         <p class="precio-case">$12</p>
+        <button class="agregar-case" type="button"
+  data-nombre="Case Classic"
+  data-precio="12">Agregar al carrito</button>
       </article>
       <article class="case-producto">
         <img src="iPhone-15-Pro-Max/ece098e2-4834-45d9-add9-18b520d66a03.jpeg" alt="Case 2 para iPhone 15 Pro Max">
         <p>Case classic</p>
         <p class="precio-case">$12</p>
+        <button class="agregar-case" type="button"
+  data-nombre="Case Classic"
+  data-precio="12">Agregar al carrito</button>
       </article>
       <article class="case-producto">
         <img src="iPhone-15-Pro-Max/fddd86db-8a46-471a-a589-37b8cba40478.jpeg" alt="Case 3 para iPhone 15 Pro Max">
         <p>Case luxury</p>
         <p class="precio-case">$12</p>
+        <button class="agregar-case" type="button"
+  data-nombre="Case Luxury"
+  data-precio="12">Agregar al carrito</button>
+        
       </article>
     </div>
   </main>
+  <section id="carrito" class="carrito-panel" hidden>
+  <h2>Tu carrito</h2>
+  <button id="cerrar-carrito" type="button">✕</button>
+  <div id="carrito-productos"></div>
+  <p><strong>Total: $<span id="carrito-total">0.00</span> USD</strong></p>
+  <button id="vaciar-carrito" type="button">Vaciar carrito</button>
+  <button id="pedir-whatsapp" type="button">Finalizar pedido por WhatsApp</button>
+</section>
+  <script>
+const carrito = JSON.parse(localStorage.getItem("karolCarrito") || "[]");
+const panel = document.getElementById("carrito");
+
+function actualizarCarrito() {
+  const lista = document.getElementById("carrito-productos");
+  const total = document.getElementById("carrito-total");
+  lista.innerHTML = "";
+  let suma = 0;
+
+  carrito.forEach((producto, indice) => {
+    suma += producto.precio * producto.cantidad;
+    const fila = document.createElement("p");
+    fila.textContent = `${producto.nombre} × ${producto.cantidad} — $${(producto.precio * producto.cantidad).toFixed(2)} `;
+
+    const quitar = document.createElement("button");
+    quitar.textContent = "Quitar";
+    quitar.type = "button";
+    quitar.onclick = () => {
+      carrito.splice(indice, 1);
+      guardar();
+    };
+
+    fila.appendChild(quitar);
+    lista.appendChild(fila);
+  });
+
+  if (carrito.length === 0) {
+    lista.textContent = "Todavía no has agregado productos.";
+  }
+
+  total.textContent = suma.toFixed(2);
+  localStorage.setItem("karolCarrito", JSON.stringify(carrito));
+}
+
+function guardar() {
+  actualizarCarrito();
+}
+
+document.querySelectorAll(".agregar-case").forEach((boton) => {
+  boton.addEventListener("click", () => {
+    const nombre = boton.dataset.nombre;
+    const precio = Number(boton.dataset.precio);
+    const existente = carrito.find((p) => p.nombre === nombre);
+
+    if (existente) {
+      existente.cantidad++;
+    } else {
+      carrito.push({ nombre, precio, cantidad: 1 });
+    }
+
+    guardar();
+    panel.hidden = false;
+    panel.classList.add("carrito-abierto");
+  });
+});
+
+document.getElementById("vaciar-carrito").onclick = () => {
+  carrito.length = 0;
+  guardar();
+};
+
+document.getElementById("pedir-whatsapp").onclick = () => {
+  if (carrito.length === 0) {
+    alert("Agrega al menos un producto antes de continuar.");
+    return;
+  }
+
+  let mensaje = "Hola, quiero realizar este pedido en Karol Case:\n\n";
+  carrito.forEach((p) => {
+    mensaje += `${p.nombre} x ${p.cantidad} — $${(p.precio * p.cantidad).toFixed(2)}\n`;
+  });
+
+  const total = carrito.reduce((s, p) => s + p.precio * p.cantidad, 0);
+  mensaje += `\nTotal: $${total.toFixed(2)} USD`;
+
+  window.open("https://wa.me/584140802335?text=" + encodeURIComponent(mensaje), "_blank");
+};
+
+document.getElementById("cerrar-carrito").onclick = () => {
+  panel.classList.remove("carrito-abierto");
+  panel.hidden = true;
+};
+
+actualizarCarrito();
+</script>
 </body>
 </html>
