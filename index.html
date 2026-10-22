@@ -137,7 +137,7 @@
 </section>
 
 <script>
-const carrito = [];
+const carrito = JSON.parse(localStorage.getItem("karolCarrito") || "[]");
 const panelCarrito = document.getElementById("carrito");
 function actualizarCarrito() {
   const lista = document.getElementById("carrito-productos");
@@ -172,6 +172,7 @@ contador.textContent = carrito.reduce(
     (acumulado, producto) => acumulado + producto.precio * producto.cantidad, 0
   );
   total.textContent = suma.toFixed(2);
+  localStorage.setItem("karolCarrito", JSON.stringify(carrito));
 }
 
 document.querySelectorAll(".product-card").forEach((tarjeta) => {
